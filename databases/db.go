@@ -13,10 +13,6 @@ type Message struct {
 	Text string `json:"text"`
 }
 
-type huy struct {
-	ID   int    `json:"ID"`
-	Text string `json:"text"`
-}
 
 
 func InitDB() {
@@ -27,7 +23,6 @@ func InitDB() {
 		log.Fatalf("Неудалось подключиться к базе данных: %v", err)
 	}
 	
-	Db.AutoMigrate(&huy{})
 	Db.AutoMigrate(&Message{})
 	
 }
